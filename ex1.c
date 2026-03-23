@@ -22,7 +22,7 @@ struct node* createNode(int data)
     return p;
 }
 
-/* (a) Hien thi danh sach */
+/* (a) Hien thi tat ca phan tu trong danh sach */
 void display(struct node* head)
 {
     struct node* p = head;
@@ -83,7 +83,7 @@ struct node* find(struct node* head, int data)
 }
 
 /* (d) Xoa node duoc tro toi boi pelement */
-struct node* delete(struct node* head, struct node* pelement)
+struct node* deleteNode(struct node* head, struct node* pelement)
 {
     struct node* p;
 
@@ -142,7 +142,6 @@ int main()
     head = addback(head, 20);
     head = addback(head, 30);
     head = addback(head, 40);
-
     printf("List after adding elements: ");
     display(head);
 
@@ -169,19 +168,19 @@ int main()
 
     printf("\n=== DELETE MIDDLE NODE TEST ===\n");
     p = find(head, 20);
-    head = delete(head, p);
+    head = deleteNode(head, p);
     printf("List after deleting 20: ");
     display(head);
 
     printf("\n=== DELETE HEAD NODE TEST ===\n");
     p = find(head, 10);
-    head = delete(head, p);
+    head = deleteNode(head, p);
     printf("List after deleting head (10): ");
     display(head);
 
     printf("\n=== DELETE LAST NODE TEST ===\n");
     p = find(head, 40);
-    head = delete(head, p);
+    head = deleteNode(head, p);
     printf("List after deleting 40: ");
     display(head);
 
